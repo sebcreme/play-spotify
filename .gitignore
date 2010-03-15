@@ -1,0 +1,7 @@
+.DS_Store
+test-result
+tmp
+logs
+eclipse
+*.~*
+dist

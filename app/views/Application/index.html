@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<header>
+    <img src="@{'/public/images/logo.png'}">
+    <input type="search" id="query" placeholder="Search in spotify..." results="10">
+</header>
+
+<div id="results">
+    %{ def tracks = xml?.asXml() }%
+    
+    <ul>
+        #{list tracks?.track, as:'track'}
+            #{if track.album.availability.territories.text().contains('FR')}
+                <li href="${track['@href']}">
+                    <span class="track">${track.name}</span>
+                    <span class="artist">${track.artist[0].name}</span> 
+                    <span class="album">${track.album.name}</span>                    
+                </li>
+            #{/if}            
+        #{/list}        
+    </ul>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $('#query').keydown(function(e) {
+        if(e.keyCode == 13) {
+            $('#results').load('@{index()}?query=' + $(this).val() + ' #results')
+        }
+    })
+    
+    $('li[href]').live('click', function() {
+        $.post('@{play()}?href=' + $(this).attr('href'))
+    })
+    
+    $('img').click(function() {
+        $.post('@{close()}')
+    })
+    
+</script>

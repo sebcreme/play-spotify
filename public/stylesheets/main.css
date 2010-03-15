@@ -1,0 +1,53 @@
+body {
+    background: #FEFFFE;
+    text-align: center;
+    font-family: "Lucida Grande", Sans;
+    overflow-y: scroll;
+    margin-top: 0;
+}
+
+img {
+    display: block;
+    margin: 0 auto 30px auto;
+    cursor: pointer;
+}
+
+input {
+    font-size: 30px;
+    width: 600px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin: 30px;
+    padding-top: 200px;
+}
+
+ul span {
+    display: inline-block;
+    width: 30%;
+    padding: 3px 5px;
+    font-size: 13px;
+}
+
+ul li {
+    cursor: pointer;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+li:hover {
+    background: #5CBE00;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 30px;
+}
