@@ -1,0 +1,6 @@
+h1. Control a remote spotify, using play!
+
+Start the application on a remote Mac computer that you want use as media center. With any other device (like an iphone), connect to the application using HTTP, and search for tracks.
+
+Feel free to fork!
+
